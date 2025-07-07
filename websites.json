@@ -1,10 +1,6 @@
 [
     {
-        "domain": "groupnil.dev",
-        "path": "Websites/groupnil.dev"
+        "domain": "groupnil.test",
+        "path": "Websites/groupnil.test"
     },
-    {
-        "domain": "coolserver.nil",
-        "path": "Websites/coolserver.nil"
-    }
 ]
