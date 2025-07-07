@@ -1,15 +1,70 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>NilWeb Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1e1e1e;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 12px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        p {
+            margin-top: 20px;
+            color: #ccc;
+        }
+        code {
+            background: #333;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to NilWeb</h1>
-    <form>
-        <input type="text" placeholder="Search NilWeb..." />
-        <button>Search</button>
+    <form onsubmit="return openDomain();">
+        <input type="text" id="domainInput" placeholder="Enter domain (e.g. groupnil.dev)" />
+        <button type="submit">Go</button>
     </form>
-    <p>Register a domain by adding it to <code>websites.json</code> and placing a folder in <code>Websites/</code>.</p>
+    <p>To register a domain, add it to <code>websites.json</code> and create a folder in <code>Websites/</code>.</p>
+
+    <script>
+        function openDomain() {
+            const domain = document.getElementById("domainInput").value.trim();
+            if (domain) {
+                window.location.href = "Websites/" + domain + "/index.html";
+            }
+            return false;
+        }
+    </script>
 </body>
 </html>
